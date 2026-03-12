@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.jp-wrap {
+  min-height: 100vh;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a0a22 0%, #0a0608 60%);
+  font-family: 'Crimson Text', Georgia, serif;
+  color: #e8dcc8;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.jp-stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.jp-star {
+  position: absolute; background: #c9a96e; border-radius: 50%;
+  animation: jptwinkle 6s ease-in-out infinite alternate;
+}
+@keyframes jptwinkle {
+  0% { opacity: 0.4; transform: scale(1); }
+  100% { opacity: 0.05; transform: scale(0.5); }
+}
+
+.jp-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(10,6,8,0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+}
+
+.jp-nav-btn {
+  background: none; border: 1px solid rgba(201,169,110,0.2);
+  color: #8a7060; font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 2px; cursor: pointer; transition: all 0.2s;
+}
+.jp-nav-btn:hover { border-color: rgba(201,169,110,0.4); color: #c9a96e; }
+
+.jp-nav-logo { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700; color: #c9a96e; letter-spacing: 0.08em; }
+
+.jp-content { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.jp-header { margin-bottom: 32px; }
+.jp-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #c9a96e; opacity: 0.7; margin-bottom: 10px; }
+.jp-title { font-family: 'Cinzel', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 900; color: #f0e6cc; }
+
+.jp-loading { display: flex; align-items: center; justify-content: center; height: 100vh; font-family: 'Cinzel', serif; color: #6a5a48; font-size: 14px; letter-spacing: 0.2em; }
+
+/* Tabs */
+.jp-tabs { display: flex; gap: 0; border-bottom: 1px solid rgba(201,169,110,0.12); margin-bottom: 28px; }
+.jp-tab {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  padding: 10px 20px; font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: #6a5a48;
+  cursor: pointer; transition: all 0.2s; margin-bottom: -1px;
+}
+.jp-tab:hover { color: #c9a96e; }
+.jp-tab.active { color: #c9a96e; border-bottom-color: #c9a96e; }
+
+/* Add button */
+.jp-add-btn {
+  padding: 9px 20px; background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border: none; border-radius: 2px; font-family: 'Cinzel', serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #0a0608; cursor: pointer; transition: all 0.2s; margin-bottom: 20px; display: block;
+}
+.jp-add-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,169,110,0.25); }
+
+/* Form */
+.jp-form {
+  background: rgba(201,169,110,0.04); border: 1px solid rgba(201,169,110,0.18);
+  border-radius: 3px; padding: 20px; margin-bottom: 20px;
+}
+.jp-form-title { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: #f0e6cc; margin-bottom: 16px; }
+.jp-form-fields { display: flex; flex-direction: column; gap: 12px; }
+.jp-form-row { display: flex; gap: 12px; }
+.jp-form-row .jp-field { flex: 1; }
+.jp-form-actions { display: flex; gap: 10px; margin-top: 16px; }
+
+.jp-field { display: flex; flex-direction: column; gap: 5px; }
+.jp-label { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e; opacity: 0.7; }
+.jp-input {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px; padding: 8px 12px; font-family: 'Crimson Text', serif;
+  font-size: 15px; color: #e8dcc8; outline: none; transition: border-color 0.2s;
+  box-sizing: border-box; width: 100%;
+}
+.jp-input::placeholder { color: rgba(168,144,112,0.4); font-style: italic; }
+.jp-input:focus { border-color: rgba(201,169,110,0.5); }
+.jp-textarea { resize: vertical; }
+.jp-select { cursor: pointer; }
+.jp-select option { background: #1a0a22; }
+.jp-input[type="date"] { color-scheme: dark; }
+
+.jp-save-btn {
+  padding: 9px 20px; background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border: none; border-radius: 2px; font-family: 'Cinzel', serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #0a0608; cursor: pointer; transition: all 0.2s;
+}
+.jp-save-btn:hover:not(:disabled) { transform: translateY(-1px); }
+.jp-save-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.jp-cancel-btn {
+  padding: 9px 20px; background: none; border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px; font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 0.15em; text-transform: uppercase; color: #6a5a48; cursor: pointer; transition: all 0.2s;
+}
+.jp-cancel-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+
+.jp-empty { font-family: 'Crimson Text', serif; font-size: 16px; font-style: italic; color: #4a3e30; padding: 24px 0; }
+
+/* Lists */
+.jp-list { display: flex; flex-direction: column; gap: 8px; }
+
+/* Entry cards */
+.jp-entry-card {
+  background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98));
+  border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; overflow: hidden;
+}
+.jp-entry-top {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; cursor: pointer;
+}
+.jp-entry-top:hover { background: rgba(201,169,110,0.03); }
+
+.jp-entry-session {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #c9a96e; opacity: 0.7;
+  background: rgba(201,169,110,0.08); border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 2px; padding: 4px 10px; flex-shrink: 0;
+}
+.jp-entry-info { flex: 1; }
+.jp-entry-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #f0e6cc; }
+.jp-entry-date { font-family: 'Crimson Text', serif; font-size: 13px; font-style: italic; color: #6a5a48; margin-top: 2px; }
+.jp-entry-expand { font-size: 10px; color: #4a3e30; }
+
+.jp-entry-body-wrap { padding: 0 20px 20px; border-top: 1px solid rgba(201,169,110,0.08); padding-top: 16px; }
+.jp-entry-body { font-size: 17px; line-height: 1.7; color: #c4b49a; font-style: italic; margin-bottom: 12px; }
+
+.jp-entry-actions { display: flex; gap: 8px; margin-bottom: 16px; }
+.jp-edit-btn {
+  padding: 5px 14px; background: none; border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #8a7060; cursor: pointer; transition: all 0.2s;
+}
+.jp-edit-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+.jp-delete-btn {
+  padding: 5px 14px; background: none; border: 1px solid rgba(180,60,60,0.2);
+  border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #c97070; cursor: pointer; transition: all 0.2s;
+}
+.jp-delete-btn:hover { background: rgba(180,60,60,0.1); }
+
+/* Comments */
+.jp-comments { border-top: 1px solid rgba(201,169,110,0.08); padding-top: 14px; }
+.jp-comments-title { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e; opacity: 0.6; margin-bottom: 10px; }
+.jp-comment { display: flex; flex-direction: column; gap: 3px; padding: 8px 0; border-bottom: 1px solid rgba(201,169,110,0.05); position: relative; }
+.jp-comment:last-of-type { border-bottom: none; }
+.jp-comment-author { font-family: 'Cinzel', serif; font-size: 10px; color: #c9a96e; letter-spacing: 0.05em; }
+.jp-comment-body { font-size: 15px; font-style: italic; color: #8a7060; line-height: 1.5; }
+.jp-comment-delete { position: absolute; right: 0; top: 8px; background: none; border: none; color: #4a3e30; cursor: pointer; font-size: 11px; transition: color 0.2s; }
+.jp-comment-delete:hover { color: #c97070; }
+.jp-comment-input-row { display: flex; gap: 8px; margin-top: 10px; }
+.jp-comment-input {
+  flex: 1; background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 2px; padding: 8px 12px; font-family: 'Crimson Text', serif;
+  font-size: 14px; color: #e8dcc8; outline: none;
+}
+.jp-comment-input::placeholder { color: rgba(168,144,112,0.35); font-style: italic; }
+.jp-comment-submit {
+  padding: 8px 16px; background: none; border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #8a7060; cursor: pointer; transition: all 0.2s;
+}
+.jp-comment-submit:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+
+/* Grid (NPCs, Locations) */
+.jp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.jp-card {
+  background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98));
+  border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.jp-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.jp-card-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #f0e6cc; }
+.jp-card-badge { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; flex-shrink: 0; }
+.jp-card-desc { font-size: 15px; font-style: italic; color: #8a7060; line-height: 1.5; }
+.jp-card-notes { font-size: 13px; color: #6a5a48; }
+.jp-card-actions { display: flex; gap: 8px; margin-top: 4px; }
+
+/* Loot */
+.jp-loot-list { display: flex; flex-direction: column; gap: 6px; }
+.jp-loot-row {
+  background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98));
+  border: 1px solid rgba(201,169,110,0.18); border-radius: 3px;
+  padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.jp-loot-name { font-family: 'Cinzel', serif; font-size: 13px; color: #f0e6cc; margin-bottom: 4px; }
+.jp-loot-meta { display: flex; gap: 12px; font-size: 13px; font-style: italic; color: #6a5a48; }
+.jp-loot-notes { font-size: 13px; color: #4a3e30; margin-top: 3px; }
+
+/* Quests */
+.jp-quest-card {
+  background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98));
+  border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 16px;
+}
+.jp-quest-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.jp-quest-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #f0e6cc; }
+.jp-quest-status { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+.jp-quest-desc { font-size: 15px; font-style: italic; color: #8a7060; line-height: 1.5; margin-bottom: 8px; }

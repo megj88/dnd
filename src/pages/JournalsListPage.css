@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.jl-wrap { min-height: 100vh; background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a0a22 0%, #0a0608 60%); font-family: 'Crimson Text', Georgia, serif; color: #e8dcc8; position: relative; overflow-x: hidden; }
+.jl-stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.jl-star { position: absolute; background: #c9a96e; border-radius: 50%; animation: jltwinkle 6s ease-in-out infinite alternate; }
+@keyframes jltwinkle { 0% { opacity: 0.4; transform: scale(1); } 100% { opacity: 0.05; transform: scale(0.5); } }
+
+.jl-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; background: rgba(10,6,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,169,110,0.15); }
+.jl-nav-btn { background: none; border: 1px solid rgba(201,169,110,0.2); color: #8a7060; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 7px 14px; border-radius: 2px; cursor: pointer; transition: all 0.2s; }
+.jl-nav-btn:hover { border-color: rgba(201,169,110,0.4); color: #c9a96e; }
+.jl-nav-logo { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700; color: #c9a96e; }
+
+.jl-content { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+.jl-header { margin-bottom: 32px; }
+.jl-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #c9a96e; opacity: 0.7; margin-bottom: 10px; }
+.jl-title { font-family: 'Cinzel', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 900; color: #f0e6cc; line-height: 1.1; margin-bottom: 12px; }
+.jl-title span { background: linear-gradient(135deg, #e8c87a 0%, #c9a96e 50%, #f0d89a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.jl-subtitle { font-size: 18px; font-style: italic; color: #a89070; }
+
+.jl-create-btn { padding: 11px 24px; background: linear-gradient(135deg, #b8912e, #c9a96e); border: none; border-radius: 2px; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #0a0608; cursor: pointer; transition: all 0.22s; margin-bottom: 20px; display: block; }
+.jl-create-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,169,110,0.25); }
+
+.jl-form { background: rgba(201,169,110,0.04); border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 20px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px; }
+.jl-input { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; padding: 10px 14px; font-family: 'Crimson Text', serif; font-size: 16px; color: #e8dcc8; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
+.jl-input::placeholder { color: rgba(168,144,112,0.4); font-style: italic; }
+.jl-input:focus { border-color: rgba(201,169,110,0.5); }
+.jl-form-actions { display: flex; gap: 10px; }
+.jl-save-btn { padding: 9px 20px; background: linear-gradient(135deg, #b8912e, #c9a96e); border: none; border-radius: 2px; font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #0a0608; cursor: pointer; transition: all 0.2s; }
+.jl-save-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.jl-cancel-btn { padding: 9px 20px; background: none; border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #6a5a48; cursor: pointer; transition: all 0.2s; }
+.jl-cancel-btn:hover { color: #c9a96e; }
+
+.jl-loading, .jl-empty { text-align: center; padding: 80px 0; color: #6a5a48; font-size: 18px; font-style: italic; }
+.jl-empty-icon { font-size: 40px; margin-bottom: 16px; }
+
+.jl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.jl-card { background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98)); border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 24px 20px; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; gap: 8px; position: relative; }
+.jl-card:hover { border-color: rgba(201,169,110,0.35); transform: translateY(-2px); }
+.jl-card-icon { font-size: 28px; }
+.jl-card-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #f0e6cc; line-height: 1.3; }
+.jl-card-date { font-family: 'Crimson Text', serif; font-size: 13px; font-style: italic; color: #4a3e30; }
+.jl-card-delete { position: absolute; top: 12px; right: 12px; background: none; border: none; color: #4a3e30; cursor: pointer; font-size: 11px; font-family: 'Cinzel', serif; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; padding: 4px 8px; }
+.jl-card-delete:hover { color: #c97070; }

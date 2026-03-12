@@ -1,0 +1,194 @@
+.sm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sm-panel {
+  background: linear-gradient(160deg, rgba(26,14,34,0.99) 0%, rgba(12,8,18,1) 100%);
+  border: 1px solid rgba(201,169,110,0.25);
+  border-radius: 4px;
+  padding: 32px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 60px rgba(120,40,160,0.2);
+}
+
+.sm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.sm-title {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0e6cc;
+}
+
+.sm-close {
+  background: none;
+  border: none;
+  color: #6a5a48;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+.sm-close:hover { color: #c9a96e; }
+
+.sm-fields { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+
+.sm-field { display: flex; flex-direction: column; gap: 6px; }
+
+.sm-row { display: flex; gap: 12px; }
+.sm-row .sm-field { flex: 1; }
+
+.sm-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.7;
+}
+
+.sm-input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 9px 12px;
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  color: #e8dcc8;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sm-input::placeholder { color: rgba(168,144,112,0.4); font-style: italic; }
+.sm-input:focus { border-color: rgba(201,169,110,0.5); }
+.sm-input option { background: #1a0a22; }
+.sm-textarea { resize: vertical; }
+
+/* Date/time inputs */
+.sm-input[type="date"],
+.sm-input[type="time"] {
+  color-scheme: dark;
+}
+
+.sm-invitees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sm-invitee {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,169,110,0.1);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 4px 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: #c9a96e;
+}
+
+.sm-remove-invitee {
+  background: none;
+  border: none;
+  color: #6a5a48;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 0;
+  transition: color 0.2s;
+}
+.sm-remove-invitee:hover { color: #c97070; }
+
+.sm-search-row { display: flex; gap: 8px; }
+.sm-search-row .sm-input { flex: 1; }
+
+.sm-search-btn {
+  padding: 9px 16px;
+  background: none;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7060;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.sm-search-btn:hover { border-color: rgba(201,169,110,0.4); color: #c9a96e; }
+
+.sm-search-results {
+  background: rgba(26,14,34,0.98);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sm-search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  color: #c4b49a;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(201,169,110,0.06);
+}
+.sm-search-result:last-child { border-bottom: none; }
+.sm-search-result:hover { background: rgba(201,169,110,0.06); }
+
+.sm-add-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: #c9a96e;
+  letter-spacing: 0.1em;
+}
+
+.sm-error {
+  background: rgba(180,60,60,0.15);
+  border: 1px solid rgba(180,60,60,0.4);
+  border-radius: 2px;
+  padding: 8px 12px;
+  color: #e8a0a0;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.sm-save-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0608;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sm-save-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,169,110,0.25); }
+.sm-save-btn:disabled { opacity: 0.4; cursor: not-allowed; }

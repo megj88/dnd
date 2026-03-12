@@ -1,0 +1,349 @@
+.cd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.cd-panel {
+  width: 100%;
+  max-width: 580px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, rgba(26,14,34,0.99) 0%, rgba(12,8,18,1) 100%);
+  border: 1px solid rgba(201,169,110,0.3);
+  border-radius: 4px;
+  padding: 36px 40px;
+  box-shadow: 0 0 60px rgba(120,40,160,0.2), 0 40px 80px rgba(0,0,0,0.8);
+}
+
+.cd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(201,169,110,0.3);
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
+
+.cd-close {
+  background: none;
+  border: none;
+  color: #6a5a48;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+.cd-close:hover { color: #c9a96e; }
+
+.cd-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #f0e6cc;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cd-dm-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: rgba(201,169,110,0.04);
+  border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 2px;
+}
+
+.cd-dm-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a0a22, #2a1a3a);
+  border: 1px solid rgba(201,169,110,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  color: #c9a96e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cd-dm-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.cd-dm-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+
+.cd-dm-name { font-size: 16px; color: #c4b49a; }
+
+.cd-body {
+  font-size: 17px;
+  color: #a89070;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cd-details-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cd-detail { display: flex; flex-direction: column; gap: 3px; }
+
+.cd-detail-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.6;
+}
+
+.cd-detail-value { font-size: 16px; color: #c4b49a; }
+
+.cd-divider {
+  height: 1px;
+  background: rgba(201,169,110,0.1);
+  margin-bottom: 24px;
+}
+
+.cd-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 16px;
+}
+
+/* Applications */
+.cd-no-apps { font-size: 15px; font-style: italic; color: #6a5a48; }
+
+.cd-apps-list { display: flex; flex-direction: column; gap: 12px; }
+
+.cd-app-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 2px;
+}
+
+.cd-app-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a0a22, #2a1a3a);
+  border: 1px solid rgba(201,169,110,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: #c9a96e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cd-app-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.cd-app-info { flex: 1; }
+.cd-app-name { font-family: 'Cinzel', serif; font-size: 13px; color: #f0e6cc; margin-bottom: 4px; }
+.cd-app-message { font-size: 14px; font-style: italic; color: #8a7060; margin-bottom: 4px; }
+.cd-app-status { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em; }
+
+.cd-app-actions { display: flex; flex-direction: column; gap: 6px; }
+
+.cd-approve-btn, .cd-reject-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cd-approve-btn {
+  background: rgba(126,201,138,0.15);
+  border: 1px solid rgba(126,201,138,0.3);
+  color: #7ec98a;
+}
+.cd-approve-btn:hover { background: rgba(126,201,138,0.25); }
+.cd-reject-btn {
+  background: rgba(201,112,112,0.15);
+  border: 1px solid rgba(201,112,112,0.3);
+  color: #c97070;
+}
+.cd-reject-btn:hover { background: rgba(201,112,112,0.25); }
+
+/* Apply section */
+.cd-apply-section { }
+
+.cd-message-input {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 11px 14px;
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
+  color: #e8dcc8;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+.cd-message-input::placeholder { color: rgba(168,144,112,0.4); font-style: italic; }
+.cd-message-input:focus { border-color: rgba(201,169,110,0.5); }
+
+.cd-apply-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #b8912e 0%, #c9a96e 50%, #d4b87a 100%);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a0608;
+  cursor: pointer;
+  transition: all 0.22s;
+  box-shadow: 0 4px 20px rgba(201,169,110,0.2);
+}
+.cd-apply-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
+.cd-apply-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.cd-error {
+  background: rgba(180,60,60,0.15);
+  border: 1px solid rgba(180,60,60,0.4);
+  border-radius: 2px;
+  padding: 10px 14px;
+  color: #e8a0a0;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.cd-success {
+  background: rgba(126,201,138,0.08);
+  border: 1px solid rgba(126,201,138,0.2);
+  border-radius: 2px;
+  padding: 16px;
+  color: #7ec98a;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.cd-existing-app { padding: 16px 0; }
+.cd-app-status-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6a5a48;
+  margin-bottom: 6px;
+}
+.cd-app-status-value { font-size: 17px; font-style: italic; }
+
+.cd-dm-note {
+  font-size: 15px;
+  font-style: italic;
+  color: #6a5a48;
+  padding: 16px;
+  border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 2px;
+  text-align: center;
+}
+
+.cd-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+}
+
+.cd-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6a5a48;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+.cd-tab:hover { color: #c9a96e; }
+.cd-tab.active { color: #c9a96e; border-bottom-color: #c9a96e; }
+
+.cd-sessions { display: flex; flex-direction: column; gap: 12px; }
+.cd-sessions-list { display: flex; flex-direction: column; gap: 8px; }
+
+.cd-create-session-btn {
+  padding: 9px 18px;
+  background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0608;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+.cd-create-session-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 15px rgba(201,169,110,0.25); }
+
+.cd-journal-btn {
+  background: none;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7060;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cd-journal-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }

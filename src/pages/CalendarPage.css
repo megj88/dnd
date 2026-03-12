@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.cp-wrap { min-height:100vh; background:radial-gradient(ellipse 80% 60% at 50% 0%,#1a0a22 0%,#0a0608 60%); font-family:'Crimson Text',Georgia,serif; color:#e8dcc8; position:relative; overflow-x:hidden; }
+.cp-stars { position:fixed; inset:0; pointer-events:none; z-index:0; }
+.cp-star { position:absolute; background:#c9a96e; border-radius:50%; animation:cptwinkle 6s ease-in-out infinite alternate; }
+@keyframes cptwinkle { 0%{opacity:0.4;transform:scale(1)} 100%{opacity:0.05;transform:scale(0.5)} }
+
+.cp-nav { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(10,6,8,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,169,110,0.15); }
+.cp-nav-btn { background:none; border:1px solid rgba(201,169,110,0.2); color:#8a7060; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:7px 14px; border-radius:2px; cursor:pointer; transition:all 0.2s; }
+.cp-nav-btn:hover { border-color:rgba(201,169,110,0.4); color:#c9a96e; }
+.cp-nav-logo { font-family:'Cinzel',serif; font-size:16px; font-weight:700; color:#c9a96e; }
+
+.cp-content { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:32px 24px 80px; }
+
+/* Reminder banner */
+.cp-reminders { display:flex; align-items:center; gap:12px; background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.2); border-radius:3px; padding:12px 16px; margin-bottom:20px; }
+.cp-reminders-icon { font-size:20px; flex-shrink:0; }
+.cp-reminders-text { display:flex; flex-wrap:wrap; gap:12px; font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.05em; color:#c9a96e; }
+.cp-reminder-item { display:flex; gap:4px; align-items:center; }
+
+/* Header */
+.cp-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; flex-wrap:wrap; gap:12px; }
+.cp-header-left { display:flex; align-items:center; gap:12px; }
+.cp-nav-month { background:none; border:1px solid rgba(201,169,110,0.2); color:#8a7060; font-size:18px; width:32px; height:32px; border-radius:2px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+.cp-nav-month:hover { color:#c9a96e; border-color:rgba(201,169,110,0.4); }
+.cp-month-title { font-family:'Cinzel',serif; font-size:22px; font-weight:700; color:#f0e6cc; min-width:200px; text-align:center; }
+.cp-today-btn { background:none; border:1px solid rgba(201,169,110,0.2); color:#8a7060; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; padding:6px 14px; border-radius:2px; cursor:pointer; transition:all 0.2s; }
+.cp-today-btn:hover { color:#c9a96e; }
+.cp-header-right { display:flex; align-items:center; gap:10px; }
+.cp-view-toggle { display:flex; border:1px solid rgba(201,169,110,0.2); border-radius:2px; overflow:hidden; }
+.cp-view-btn { background:none; border:none; color:#6a5a48; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; padding:7px 16px; cursor:pointer; transition:all 0.2s; }
+.cp-view-btn:hover { color:#c9a96e; }
+.cp-view-btn.active { background:rgba(201,169,110,0.1); color:#c9a96e; }
+.cp-create-btn { padding:9px 18px; background:linear-gradient(135deg,#b8912e,#c9a96e); border:none; border-radius:2px; font-family:'Cinzel',serif; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#0a0608; cursor:pointer; transition:all 0.2s; }
+.cp-create-btn:hover { transform:translateY(-1px); }
+
+.cp-loading { text-align:center; padding:80px 0; color:#6a5a48; font-size:18px; font-style:italic; }
+
+/* Calendar grid */
+.cp-calendar { background:rgba(12,8,18,0.6); border:1px solid rgba(201,169,110,0.12); border-radius:3px; overflow:hidden; }
+.cp-day-headers { display:grid; grid-template-columns:repeat(7,1fr); border-bottom:1px solid rgba(201,169,110,0.1); }
+.cp-day-header { padding:10px 8px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#4a3e30; text-align:center; }
+.cp-grid { display:grid; grid-template-columns:repeat(7,1fr); }
+.cp-cell { border-right:1px solid rgba(201,169,110,0.06); border-bottom:1px solid rgba(201,169,110,0.06); padding:8px; min-height:90px; cursor:pointer; transition:background 0.15s; position:relative; }
+.cp-cell:hover { background:rgba(201,169,110,0.04); }
+.cp-cell.today { background:rgba(201,169,110,0.06); }
+.cp-cell.selected { background:rgba(201,169,110,0.08); }
+.cp-cell-empty { border-right:1px solid rgba(201,169,110,0.06); border-bottom:1px solid rgba(201,169,110,0.06); min-height:90px; }
+.cp-cell-date { font-family:'Cinzel',serif; font-size:12px; font-weight:700; color:#6a5a48; margin-bottom:6px; }
+.cp-cell.today .cp-cell-date { color:#c9a96e; }
+.cp-cell-events { display:flex; flex-direction:column; gap:3px; }
+.cp-cell-event { font-family:'Cinzel',serif; font-size:9px; color:#c4b49a; background:rgba(255,255,255,0.04); border-left:2px solid; border-radius:1px; padding:2px 5px; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:background 0.15s; }
+.cp-cell-event:hover { background:rgba(255,255,255,0.08); }
+.cp-cell-more { font-family:'Cinzel',serif; font-size:9px; color:#4a3e30; padding:1px 5px; }
+
+/* Agenda view */
+.cp-agenda { display:flex; flex-direction:column; gap:0; }
+.cp-agenda-date { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.7; padding:20px 0 8px; border-bottom:1px solid rgba(201,169,110,0.08); margin-bottom:8px; }
+.cp-agenda-event { display:flex; align-items:flex-start; gap:16px; padding:12px 16px; background:linear-gradient(160deg,rgba(26,14,34,0.8),rgba(12,8,18,0.9)); border:1px solid rgba(201,169,110,0.12); border-left:3px solid; border-radius:2px; margin-bottom:6px; cursor:pointer; transition:all 0.2s; }
+.cp-agenda-event:hover { border-color:rgba(201,169,110,0.3); }
+.cp-agenda-time { font-family:'Cinzel',serif; font-size:11px; color:#6a5a48; white-space:nowrap; padding-top:2px; min-width:52px; }
+.cp-agenda-info { flex:1; }
+.cp-agenda-title { font-family:'Cinzel',serif; font-size:13px; font-weight:600; color:#f0e6cc; margin-bottom:3px; }
+.cp-agenda-desc { font-family:'Crimson Text',serif; font-size:14px; font-style:italic; color:#6a5a48; }
+.cp-agenda-rsvp { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap; }
+.cp-empty { text-align:center; padding:60px 0; color:#6a5a48; font-size:18px; font-style:italic; }
+.cp-empty-icon { font-size:40px; margin-bottom:16px; }
+
+/* Day panel */
+.cp-day-panel { background:linear-gradient(160deg,rgba(26,14,34,0.98),rgba(12,8,18,1)); border:1px solid rgba(201,169,110,0.2); border-radius:3px; padding:20px; margin-top:16px; }
+.cp-day-panel-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.cp-day-panel-title { font-family:'Cinzel',serif; font-size:14px; font-weight:700; color:#f0e6cc; }
+.cp-day-panel-close { background:none; border:none; color:#6a5a48; cursor:pointer; font-size:14px; transition:color 0.2s; }
+.cp-day-panel-close:hover { color:#c9a96e; }
+.cp-day-panel-empty { font-family:'Crimson Text',serif; font-size:15px; font-style:italic; color:#4a3e30; }
+.cp-day-event { padding:12px; border:1px solid rgba(201,169,110,0.1); border-radius:2px; cursor:pointer; margin-bottom:6px; transition:all 0.2s; }
+.cp-day-event:hover { border-color:rgba(201,169,110,0.3); background:rgba(201,169,110,0.04); }
+.cp-day-event-type { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px; }
+.cp-day-event-title { font-family:'Cinzel',serif; font-size:13px; font-weight:600; color:#f0e6cc; }
+.cp-day-event-time { font-family:'Cinzel',serif; font-size:10px; color:#6a5a48; margin-top:3px; }
+
+/* Event detail panel */
+.cp-event-panel { background:linear-gradient(160deg,rgba(26,14,34,0.98),rgba(12,8,18,1)); border:1px solid rgba(201,169,110,0.2); border-radius:3px; padding:24px; margin-top:16px; }
+.cp-event-panel-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.cp-event-type-badge { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; border:1px solid; border-radius:2px; padding:3px 10px; }
+.cp-event-panel-actions { display:flex; gap:8px; align-items:center; }
+.cp-event-edit-btn { background:none; border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:5px 12px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7060; cursor:pointer; transition:all 0.2s; }
+.cp-event-edit-btn:hover { color:#c9a96e; }
+.cp-event-delete-btn { background:none; border:1px solid rgba(180,60,60,0.2); border-radius:2px; padding:5px 12px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#c97070; cursor:pointer; transition:all 0.2s; }
+.cp-event-delete-btn:hover { background:rgba(180,60,60,0.1); }
+.cp-event-panel-close { background:none; border:none; color:#6a5a48; cursor:pointer; font-size:14px; transition:color 0.2s; }
+.cp-event-panel-close:hover { color:#c9a96e; }
+.cp-event-panel-title { font-family:'Cinzel',serif; font-size:22px; font-weight:900; color:#f0e6cc; margin-bottom:6px; }
+.cp-event-panel-date { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.1em; color:#6a5a48; margin-bottom:14px; }
+.cp-event-panel-desc { font-family:'Crimson Text',serif; font-size:16px; font-style:italic; color:#8a7060; line-height:1.6; margin-bottom:16px; }
+.cp-rsvp-section { margin-top:16px; }
+.cp-rsvp-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.6; margin-bottom:10px; }
+.cp-rsvp-btns { display:flex; gap:8px; }
+.cp-rsvp-btn { padding:8px 18px; background:none; border:1px solid rgba(201,169,110,0.2); border-radius:2px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6a5a48; cursor:pointer; transition:all 0.2s; }
+.cp-rsvp-btn:hover { border-color:rgba(201,169,110,0.4); color:#c9a96e; }
+.cp-rsvp-btn.active { font-weight:700; }
+.cp-session-link-btn { margin-top:16px; background:none; border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:8px 16px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7060; cursor:pointer; transition:all 0.2s; }
+.cp-session-link-btn:hover { color:#c9a96e; border-color:rgba(201,169,110,0.4); }

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.fp-wrap { min-height: 100vh; background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a0a22 0%, #0a0608 60%); font-family: 'Crimson Text', Georgia, serif; color: #e8dcc8; position: relative; overflow-x: hidden; }
+.fp-stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.fp-star { position: absolute; background: #c9a96e; border-radius: 50%; animation: fptwinkle 6s ease-in-out infinite alternate; }
+@keyframes fptwinkle { 0% { opacity: 0.4; transform: scale(1); } 100% { opacity: 0.05; transform: scale(0.5); } }
+
+.fp-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; background: rgba(10,6,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,169,110,0.15); }
+.fp-nav-btn { background: none; border: 1px solid rgba(201,169,110,0.2); color: #8a7060; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 7px 14px; border-radius: 2px; cursor: pointer; transition: all 0.2s; }
+.fp-nav-btn:hover { border-color: rgba(201,169,110,0.4); color: #c9a96e; }
+.fp-nav-logo { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 700; color: #c9a96e; }
+
+.fp-content { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+.fp-header { margin-bottom: 32px; }
+.fp-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: #c9a96e; opacity: 0.7; margin-bottom: 10px; }
+.fp-title { font-family: 'Cinzel', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 900; color: #f0e6cc; line-height: 1.1; margin-bottom: 12px; }
+.fp-title span { background: linear-gradient(135deg, #e8c87a 0%, #c9a96e 50%, #f0d89a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.fp-subtitle { font-size: 18px; font-style: italic; color: #a89070; }
+.fp-loading { text-align: center; padding: 80px 0; color: #6a5a48; font-size: 18px; font-style: italic; }
+
+.fp-tabs { display: flex; gap: 0; border-bottom: 1px solid rgba(201,169,110,0.12); margin-bottom: 28px; }
+.fp-tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 10px 20px; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #6a5a48; cursor: pointer; transition: all 0.2s; margin-bottom: -1px; display: flex; align-items: center; gap: 8px; }
+.fp-tab:hover { color: #c9a96e; }
+.fp-tab.active { color: #c9a96e; border-bottom-color: #c9a96e; }
+.fp-tab-badge { background: #c9a96e; color: #0a0608; border-radius: 10px; padding: 1px 7px; font-size: 9px; font-weight: 900; }
+
+.fp-list { display: flex; flex-direction: column; gap: 8px; }
+.fp-empty { text-align: center; padding: 60px 0; color: #6a5a48; font-size: 17px; font-style: italic; }
+.fp-empty-icon { font-size: 40px; margin-bottom: 16px; }
+
+.fp-friend-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98)); border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 14px 16px; transition: border-color 0.2s; }
+.fp-friend-row:hover { border-color: rgba(201,169,110,0.3); }
+
+.fp-friend-left { display: flex; align-items: center; gap: 12px; cursor: pointer; flex: 1; }
+.fp-avatar-wrap { position: relative; flex-shrink: 0; }
+.fp-avatar { border-radius: 50%; background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; color: #c9a96e; flex-shrink: 0; overflow: hidden; }
+.fp-online-dot { position: absolute; bottom: 1px; right: 1px; width: 10px; height: 10px; border-radius: 50%; background: #4a3e30; border: 2px solid #0a0608; }
+.fp-online-dot.online { background: #7ec98a; }
+
+.fp-friend-info { flex: 1; }
+.fp-friend-name { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: #f0e6cc; margin-bottom: 3px; }
+.fp-friend-meta { display: flex; gap: 10px; align-items: center; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #4a3e30; }
+.fp-friend-playstyle { color: #6a5a48; }
+.fp-friend-status { }
+.fp-friend-status.online { color: #7ec98a; }
+
+.fp-friend-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.fp-msg-btn, .fp-view-btn { padding: 6px 14px; background: none; border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a7060; cursor: pointer; transition: all 0.2s; }
+.fp-msg-btn:hover, .fp-view-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+.fp-unfriend-btn, .fp-decline-btn { padding: 6px 14px; background: none; border: 1px solid rgba(180,60,60,0.2); border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #c97070; cursor: pointer; transition: all 0.2s; }
+.fp-unfriend-btn:hover, .fp-decline-btn:hover { background: rgba(180,60,60,0.1); }
+.fp-accept-btn { padding: 6px 14px; background: linear-gradient(135deg, #4a8a56, #7ec98a); border: none; border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #0a0608; cursor: pointer; transition: all 0.2s; font-weight: 700; }
+.fp-accept-btn:hover { transform: translateY(-1px); }
+
+.fp-requests { display: flex; flex-direction: column; gap: 24px; }
+.fp-requests-section { display: flex; flex-direction: column; gap: 8px; }
+.fp-requests-title { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e; opacity: 0.7; margin-bottom: 4px; }
+
+.fp-suggestions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.fp-suggestion-card { background: linear-gradient(160deg, rgba(26,14,34,0.95), rgba(12,8,18,0.98)); border: 1px solid rgba(201,169,110,0.18); border-radius: 3px; padding: 24px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; transition: all 0.2s; }
+.fp-suggestion-card:hover { border-color: rgba(201,169,110,0.35); transform: translateY(-2px); }
+.fp-suggestion-name { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: #f0e6cc; }
+.fp-suggestion-playstyle { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #6a5a48; }
+.fp-suggestion-actions { display: flex; gap: 8px; margin-top: 4px; }
+.fp-add-btn { padding: 6px 14px; background: linear-gradient(135deg, #b8912e, #c9a96e); border: none; border-radius: 2px; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #0a0608; cursor: pointer; transition: all 0.2s; font-weight: 700; }
+.fp-add-btn:hover { transform: translateY(-1px); }

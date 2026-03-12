@@ -1,0 +1,51 @@
+/* =====================
+   GLOBAL MOBILE STYLES
+   ===================== */
+
+* { box-sizing: border-box; }
+
+/* Prevent horizontal overflow globally */
+html, body { overflow-x: hidden; max-width: 100vw; }
+
+/* Scrollable horizontal pill rows */
+.scroll-x {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.scroll-x::-webkit-scrollbar { display: none; }
+
+@media (max-width: 768px) {
+  /* Global card padding reduction */
+  .profile-card,
+  .cd-card,
+  .cp-card { padding: 16px !important; }
+
+  /* Global modal full screen on mobile */
+  .modal-overlay,
+  .em-overlay,
+  .rm-overlay,
+  .rep-overlay {
+    padding: 0 !important;
+    align-items: flex-end !important;
+  }
+
+  .modal-panel,
+  .em-panel,
+  .rm-panel,
+  .rep-panel {
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 12px 12px 0 0 !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tighter global spacing */
+  h1 { font-size: clamp(20px, 6vw, 32px) !important; }
+}

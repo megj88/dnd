@@ -1,0 +1,253 @@
+.npcg-wrap { margin-bottom: 16px; }
+
+.npcg-toggle-btn {
+  background: none;
+  border: 1px solid rgba(201,169,110,0.3);
+  border-radius: 2px;
+  padding: 9px 18px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.npcg-toggle-btn:hover { background: rgba(201,169,110,0.08); }
+
+.npcg-panel {
+  margin-top: 12px;
+  background: rgba(12,8,18,0.8);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 3px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.npcg-panel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f0e6cc;
+  letter-spacing: 0.08em;
+}
+
+.npcg-panel-sub {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #6a5a48;
+  margin: -8px 0 0;
+}
+
+.npcg-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.npcg-field { display: flex; flex-direction: column; gap: 6px; }
+
+.npcg-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.7;
+}
+
+.npcg-select, .npcg-input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  color: #e8dcc8;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.npcg-select option { background: #0a0608; }
+.npcg-select:focus, .npcg-input:focus { border-color: rgba(201,169,110,0.5); }
+.npcg-input::placeholder { color: rgba(168,144,112,0.4); font-style: italic; }
+
+.npcg-generate-btn {
+  padding: 11px 24px;
+  background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0608;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+.npcg-generate-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,169,110,0.3); }
+.npcg-generate-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.npcg-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+}
+.npcg-loading p { font-family: 'Crimson Text', serif; font-size: 15px; font-style: italic; color: #6a5a48; }
+.npcg-loading-bar {
+  width: 200px;
+  height: 2px;
+  background: rgba(201,169,110,0.1);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+.npcg-loading-bar::after {
+  content: '';
+  position: absolute;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+  animation: npcg-slide 1.2s ease-in-out infinite;
+}
+@keyframes npcg-slide { to { left: 100%; } }
+
+.npcg-result {
+  border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.npcg-result-header {
+  background: rgba(201,169,110,0.06);
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.npcg-result-name {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0e6cc;
+  flex: 1;
+}
+
+.npcg-result-race {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.8;
+}
+
+.npcg-regen-btn {
+  background: none;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  padding: 5px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a5a48;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.npcg-regen-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+.npcg-regen-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.npcg-result-fields {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.npcg-result-field { display: flex; flex-direction: column; gap: 4px; }
+
+.npcg-result-label {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.6;
+}
+
+.npcg-result-textarea {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,169,110,0.12);
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  color: #c4b49a;
+  outline: none;
+  resize: vertical;
+  line-height: 1.6;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.npcg-result-textarea:focus { border-color: rgba(201,169,110,0.4); color: #e8dcc8; }
+
+.npcg-save-row {
+  display: flex;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(201,169,110,0.08);
+  flex-wrap: wrap;
+}
+
+.npcg-save-btn {
+  padding: 8px 16px;
+  background: rgba(201,169,110,0.06);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7060;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.npcg-save-btn:hover { color: #c9a96e; border-color: rgba(201,169,110,0.4); }
+.npcg-save-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.npcg-save-btn.secondary { color: #7090a0; border-color: rgba(112,144,160,0.2); }
+.npcg-save-btn.secondary:hover { color: #90c0d0; border-color: rgba(112,144,160,0.4); }
+.npcg-save-btn.gold {
+  background: linear-gradient(135deg, #b8912e, #c9a96e);
+  border-color: transparent;
+  color: #0a0608;
+  font-weight: 700;
+}
+.npcg-save-btn.gold:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,169,110,0.3); }
+
+.npcg-save-msg {
+  padding: 0 20px 14px;
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #7ec98a;
+}
+
+@media (max-width: 768px) {
+  .npcg-controls { grid-template-columns: 1fr; }
+  .npcg-save-row { flex-direction: column; }
+  .npcg-save-btn { width: 100%; text-align: center; }
+}

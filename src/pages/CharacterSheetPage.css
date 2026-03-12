@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.cs-wrap { min-height:100vh; background:radial-gradient(ellipse 80% 60% at 50% 0%,#1a0a22 0%,#0a0608 60%); font-family:'Crimson Text',Georgia,serif; color:#e8dcc8; position:relative; overflow-x:hidden; }
+.cs-stars { position:fixed; inset:0; pointer-events:none; z-index:0; }
+.cs-star { position:absolute; background:#c9a96e; border-radius:50%; animation:cstwinkle 6s ease-in-out infinite alternate; }
+@keyframes cstwinkle { 0%{opacity:0.4;transform:scale(1)} 100%{opacity:0.05;transform:scale(0.5)} }
+.cs-loading { display:flex; align-items:center; justify-content:center; height:100vh; font-family:'Cinzel',serif; color:#6a5a48; font-size:14px; letter-spacing:0.2em; }
+
+.cs-nav { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:14px 40px; background:rgba(10,6,8,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,169,110,0.15); gap:16px; }
+.cs-nav-btn { background:none; border:1px solid rgba(201,169,110,0.2); color:#8a7060; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:7px 14px; border-radius:2px; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+.cs-nav-btn:hover { border-color:rgba(201,169,110,0.4); color:#c9a96e; }
+.cs-nav-center { display:flex; align-items:center; gap:12px; flex:1; justify-content:center; }
+.cs-nav-name { font-family:'Cinzel',serif; font-size:16px; font-weight:700; color:#f0e6cc; }
+.cs-save-status { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; color:#7ec98a; text-transform:uppercase; }
+
+.cs-content { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:32px 24px 80px; }
+
+.cs-tabs { display:flex; flex-wrap:wrap; gap:0; border-bottom:1px solid rgba(201,169,110,0.12); margin-bottom:28px; }
+.cs-tab { background:none; border:none; border-bottom:2px solid transparent; padding:10px 16px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#6a5a48; cursor:pointer; transition:all 0.2s; margin-bottom:-1px; }
+.cs-tab:hover { color:#c9a96e; }
+.cs-tab.active { color:#c9a96e; border-bottom-color:#c9a96e; }
+
+.cs-tab-body { }
+.cs-section { display:flex; flex-direction:column; gap:20px; }
+
+.cs-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.cs-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+
+.cs-field { display:flex; flex-direction:column; gap:5px; }
+.cs-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.7; }
+.cs-input { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:9px 12px; font-family:'Crimson Text',serif; font-size:15px; color:#e8dcc8; outline:none; transition:border-color 0.2s; width:100%; box-sizing:border-box; }
+.cs-input::placeholder { color:rgba(168,144,112,0.4); font-style:italic; }
+.cs-input:focus { border-color:rgba(201,169,110,0.5); }
+.cs-input:disabled { opacity:0.6; cursor:default; }
+.cs-textarea { resize:vertical; line-height:1.6; }
+.cs-select { cursor:pointer; } .cs-select option { background:#1a0a22; }
+
+/* Ability scores */
+.cs-ability-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
+.cs-ability-card { background:linear-gradient(160deg,rgba(26,14,34,0.95),rgba(12,8,18,0.98)); border:1px solid rgba(201,169,110,0.2); border-radius:3px; padding:16px 8px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; }
+.cs-ability-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.8; }
+.cs-ability-mod { font-family:'Cinzel',serif; font-size:28px; font-weight:900; color:#f0e6cc; line-height:1; }
+.cs-ability-input { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:5px; font-family:'Cinzel',serif; font-size:14px; color:#c9a96e; text-align:center; width:52px; outline:none; }
+.cs-ability-input:focus { border-color:rgba(201,169,110,0.5); }
+.cs-ability-full { font-family:'Cinzel',serif; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:#4a3e30; }
+
+/* Skills */
+.cs-skills-list { display:flex; flex-direction:column; gap:4px; }
+.cs-skill-row { display:flex; align-items:center; gap:12px; padding:7px 12px; border-radius:2px; transition:background 0.15s; }
+.cs-skill-row:hover { background:rgba(201,169,110,0.04); }
+.cs-prof-dot { width:12px; height:12px; border-radius:50%; border:1px solid rgba(201,169,110,0.3); background:none; cursor:pointer; transition:all 0.2s; flex-shrink:0; padding:0; }
+.cs-prof-dot.active { background:#c9a96e; border-color:#c9a96e; }
+.cs-skill-bonus { font-family:'Cinzel',serif; font-size:12px; font-weight:700; color:#c9a96e; width:30px; text-align:right; }
+.cs-skill-name { flex:1; font-family:'Crimson Text',serif; font-size:15px; color:#c4b49a; }
+.cs-skill-ability { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#4a3e30; }
+.cs-custom-note { font-family:'Crimson Text',serif; font-size:15px; font-style:italic; color:#6a5a48; }
+
+/* Spells */
+.cs-spell-slots-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:8px; }
+.cs-spell-slot-card { background:rgba(201,169,110,0.04); border:1px solid rgba(201,169,110,0.12); border-radius:2px; padding:10px 8px; text-align:center; }
+.cs-spell-slot-label { font-family:'Cinzel',serif; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:#6a5a48; margin-bottom:6px; }
+.cs-spell-slot-input { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:4px; font-family:'Cinzel',serif; font-size:14px; color:#c9a96e; text-align:center; width:40px; outline:none; }
+
+.cs-spells-list { display:flex; flex-direction:column; gap:6px; }
+.cs-spell-row { display:flex; align-items:center; gap:8px; padding:8px; background:rgba(255,255,255,0.02); border:1px solid rgba(201,169,110,0.1); border-radius:2px; }
+
+/* Inventory */
+.cs-inventory-list { display:flex; flex-direction:column; gap:4px; }
+.cs-inventory-header { display:grid; grid-template-columns:2fr 0.5fr 0.5fr 2fr 24px; gap:8px; padding:0 8px 6px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:#4a3e30; border-bottom:1px solid rgba(201,169,110,0.08); }
+.cs-inventory-row { display:grid; grid-template-columns:2fr 0.5fr 0.5fr 2fr 24px; gap:8px; align-items:center; padding:6px 8px; background:rgba(255,255,255,0.02); border:1px solid rgba(201,169,110,0.08); border-radius:2px; }
+
+/* Feats */
+.cs-feats-list { display:flex; flex-direction:column; gap:12px; }
+.cs-feat-card { background:rgba(201,169,110,0.04); border:1px solid rgba(201,169,110,0.15); border-radius:3px; padding:14px; }
+.cs-feat-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+
+/* Shared inline inputs */
+.cs-inline-input { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.15); border-radius:2px; padding:6px 10px; font-family:'Crimson Text',serif; font-size:14px; color:#e8dcc8; outline:none; flex:1; min-width:0; }
+.cs-inline-input:focus { border-color:rgba(201,169,110,0.4); }
+.cs-inline-input:disabled { opacity:0.6; }
+.cs-inline-input.cs-narrow { flex:none; width:52px; text-align:center; }
+.cs-inline-input.cs-feat-name { font-family:'Cinzel',serif; font-size:13px; font-weight:600; color:#f0e6cc; }
+.cs-inline-input.cs-spell-desc { flex:2; }
+.cs-inline-select { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.15); border-radius:2px; padding:6px 8px; font-family:'Cinzel',serif; font-size:11px; color:#c9a96e; outline:none; cursor:pointer; }
+.cs-inline-select option { background:#1a0a22; }
+.cs-inline-textarea { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.15); border-radius:2px; padding:8px 10px; font-family:'Crimson Text',serif; font-size:14px; color:#e8dcc8; outline:none; width:100%; resize:vertical; line-height:1.5; box-sizing:border-box; }
+.cs-inline-textarea:focus { border-color:rgba(201,169,110,0.4); }
+.cs-inline-textarea:disabled { opacity:0.6; }
+
+.cs-section-title { font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.7; margin-bottom:4px; }
+.cs-section-title-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:4px; }
+.cs-add-btn { padding:6px 14px; background:none; border:1px solid rgba(201,169,110,0.2); border-radius:2px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#8a7060; cursor:pointer; transition:all 0.2s; }
+.cs-add-btn:hover { color:#c9a96e; border-color:rgba(201,169,110,0.4); }
+.cs-remove-btn { background:none; border:none; color:#4a3e30; cursor:pointer; font-size:12px; transition:color 0.2s; padding:4px; flex-shrink:0; }
+.cs-remove-btn:hover { color:#c97070; }
+.cs-empty { font-family:'Crimson Text',serif; font-size:15px; font-style:italic; color:#4a3e30; padding:16px 0; }

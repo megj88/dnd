@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+.npcl-wrap { min-height:100vh; background:radial-gradient(ellipse 80% 60% at 50% 0%,#1a0a22 0%,#0a0608 60%); font-family:'Crimson Text',serif; color:#e8dcc8; position:relative; overflow-x:hidden; }
+.npcl-stars { position:fixed; inset:0; pointer-events:none; z-index:0; }
+.npcl-star { position:absolute; background:#c9a96e; border-radius:50%; animation:npcl-twinkle 6s ease-in-out infinite alternate; }
+@keyframes npcl-twinkle { 0%{opacity:0.4;transform:scale(1)} 100%{opacity:0.05;transform:scale(0.5)} }
+
+.npcl-nav { position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px 40px; background:rgba(10,6,8,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,169,110,0.15); }
+.npcl-nav-btn { background:none; border:1px solid rgba(201,169,110,0.2); color:#8a7060; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; padding:7px 14px; border-radius:2px; cursor:pointer; transition:all 0.2s; }
+.npcl-nav-btn:hover { border-color:rgba(201,169,110,0.4); color:#c9a96e; }
+.npcl-nav-logo { font-family:'Cinzel',serif; font-size:16px; font-weight:700; color:#c9a96e; }
+
+.npcl-content { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:32px 24px 80px; }
+.npcl-header { margin-bottom:24px; }
+.npcl-eyebrow { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:#c9a96e; opacity:0.7; margin-bottom:8px; }
+.npcl-title { font-family:'Cinzel',serif; font-size:clamp(24px,4vw,36px); font-weight:900; color:#f0e6cc; }
+.npcl-title span { background:linear-gradient(135deg,#e8c87a,#c9a96e,#f0d89a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+.npcl-controls { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+.npcl-search { flex:1; min-width:200px; background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:9px 14px; font-family:'Crimson Text',serif; font-size:15px; color:#e8dcc8; outline:none; transition:border-color 0.2s; }
+.npcl-search::placeholder { color:rgba(168,144,112,0.4); font-style:italic; }
+.npcl-search:focus { border-color:rgba(201,169,110,0.5); }
+.npcl-filter { background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.2); border-radius:2px; padding:9px 14px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.08em; color:#8a7060; outline:none; cursor:pointer; }
+.npcl-filter option { background:#0a0608; }
+
+.npcl-body { display:grid; grid-template-columns:260px 1fr; gap:16px; min-height:500px; }
+.npcl-list { display:flex; flex-direction:column; background:rgba(12,8,18,0.6); border:1px solid rgba(201,169,110,0.1); border-radius:3px; overflow:hidden; overflow-y:auto; max-height:75vh; }
+.npcl-loading,.npcl-empty { padding:40px 20px; text-align:center; font-family:'Crimson Text',serif; font-size:16px; font-style:italic; color:#3a2e22; }
+.npcl-empty-icon { font-size:36px; margin-bottom:12px; }
+.npcl-item { padding:12px 16px; border-bottom:1px solid rgba(201,169,110,0.05); cursor:pointer; transition:background 0.15s; }
+.npcl-item:last-child { border-bottom:none; }
+.npcl-item:hover { background:rgba(201,169,110,0.04); }
+.npcl-item.active { background:rgba(201,169,110,0.09); border-left:2px solid #c9a96e; }
+.npcl-item-name { font-family:'Cinzel',serif; font-size:13px; color:#f0e6cc; margin-bottom:3px; }
+.npcl-item-meta { display:flex; gap:8px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.05em; color:#3a2e22; }
+
+.npcl-detail { background:rgba(12,8,18,0.6); border:1px solid rgba(201,169,110,0.1); border-radius:3px; padding:24px; overflow-y:auto; max-height:75vh; }
+.npcl-detail-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#3a2e22; gap:12px; }
+.npcl-detail-empty-icon { font-size:40px; }
+.npcl-detail-empty p { font-family:'Crimson Text',serif; font-size:16px; font-style:italic; }
+.npcl-detail-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px; gap:12px; }
+.npcl-detail-name { font-family:'Cinzel',serif; font-size:22px; font-weight:900; color:#f0e6cc; margin:0 0 4px; }
+.npcl-detail-race { font-family:'Cinzel',serif; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:#c9a96e; opacity:0.7; }
+.npcl-delete-btn { background:none; border:1px solid rgba(180,60,60,0.2); border-radius:2px; padding:5px 12px; font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#c97070; cursor:pointer; transition:all 0.2s; flex-shrink:0; }
+.npcl-delete-btn:hover { background:rgba(180,60,60,0.1); }
+.npcl-detail-section { margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid rgba(201,169,110,0.06); }
+.npcl-detail-section:last-child { border-bottom:none; margin-bottom:0; }
+.npcl-detail-section-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#c9a96e; opacity:0.6; margin-bottom:6px; }
+.npcl-detail-section-body { font-family:'Crimson Text',serif; font-size:16px; color:#c4b49a; line-height:1.75; margin:0; }
+
+@media (max-width: 768px) {
+  .npcl-nav { padding:12px 16px; }
+  .npcl-content { padding:24px 16px 60px; }
+  .npcl-body { grid-template-columns:1fr; }
+  .npcl-list { max-height:300px; }
+}

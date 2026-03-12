@@ -1,0 +1,45 @@
+.at-toast {
+  position: fixed;
+  bottom: 160px;
+  left: 28px;
+  background: linear-gradient(160deg, rgba(26,14,34,0.99), rgba(12,8,18,1));
+  border: 1px solid rgba(201,169,110,0.4);
+  border-radius: 4px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 1000;
+  box-shadow: 0 0 30px rgba(201,169,110,0.15), 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateX(-120%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 280px;
+}
+.at-toast.visible { transform: translateX(0); }
+
+.at-icon { font-size: 32px; flex-shrink: 0; }
+
+.at-header {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.8;
+  margin-bottom: 3px;
+}
+
+.at-label {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f0e6cc;
+  margin-bottom: 2px;
+}
+
+.at-desc {
+  font-family: 'Crimson Text', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #8a7060;
+}

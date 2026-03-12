@@ -1,0 +1,93 @@
+.rd-empty {
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #4a3e30;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.rd-wrap { display: flex; flex-direction: column; gap: 20px; }
+
+.rd-overall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(201,169,110,0.1);
+}
+
+.rd-overall-score {
+  font-family: 'Cinzel', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #c9a96e;
+  line-height: 1;
+}
+
+.rd-overall-stars { display: flex; gap: 4px; }
+
+.rd-overall-count {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4a3e30;
+}
+
+.rd-star { color: rgba(201,169,110,0.2); font-size: 16px; }
+.rd-star.active { color: #c9a96e; }
+.rd-star.large { font-size: 22px; }
+
+.rd-categories { display: flex; flex-direction: column; gap: 10px; }
+
+.rd-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rd-category-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7060;
+  flex-shrink: 0;
+}
+
+.rd-stars { display: flex; align-items: center; gap: 3px; }
+.rd-value {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: #c9a96e;
+  margin-left: 6px;
+}
+
+.rd-reviews { border-top: 1px solid rgba(201,169,110,0.1); padding-top: 16px; }
+
+.rd-reviews-title {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.rd-review {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.06);
+}
+.rd-review:last-child { border-bottom: none; }
+
+.rd-review-text {
+  font-family: 'Crimson Text', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #8a7060;
+  line-height: 1.6;
+}
