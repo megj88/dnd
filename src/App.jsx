@@ -97,21 +97,21 @@ export default function App() {
               <ProtectedRoute><PartyFinder /></ProtectedRoute>
             } />
             <Route path="/characters" element={<ProtectedRoute><CharacterSheetsListPage /></ProtectedRoute>} />
-<Route path="/character/:id" element={<ProtectedRoute><CharacterSheetPage /></ProtectedRoute>} />
+            <Route path="/character/:id" element={<ProtectedRoute><CharacterSheetPage /></ProtectedRoute>} />
             <Route path="/scheduler" element={
-  <ProtectedRoute><SchedulerPage /></ProtectedRoute>
-} />
-<Route path="/maps" element={<ProtectedRoute><MapsListPage /></ProtectedRoute>} />
-<Route path="/map/:id" element={<ProtectedRoute><MapBuilderPage /></ProtectedRoute>} />
-<Route path="/journals" element={<ProtectedRoute><JournalsListPage /></ProtectedRoute>} />
-<Route path="/journal/:journalId" element={<ProtectedRoute><JournalPage /></ProtectedRoute>} />
-<Route path="/homebrew" element={<ProtectedRoute><HomebrewPage /></ProtectedRoute>} />
-<Route path="/calendar" element={<ProtectedRoute><CalendarPage /></ProtectedRoute>} />
-<Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
-<Route path="/rules" element={<ProtectedRoute><RulesPage /></ProtectedRoute>} />
-<Route path="/npcs" element={<ProtectedRoute><NPCLibraryPage /></ProtectedRoute>} />
-<Route path="/campaign/:id/dashboard" element={<ProtectedRoute><CampaignDashboardPage /></ProtectedRoute>} />
-<Route path="/campaign/:id/session/:sessionId/play" element={<ProtectedRoute><SessionPlayPage /></ProtectedRoute>} />
+            <ProtectedRoute><SchedulerPage /></ProtectedRoute>
+            } />
+            <Route path="/maps" element={<ProtectedRoute><MapsListPage /></ProtectedRoute>} />
+            <Route path="/map/:id" element={<ProtectedRoute><MapBuilderPage /></ProtectedRoute>} />
+            <Route path="/journals" element={<ProtectedRoute><JournalsListPage /></ProtectedRoute>} />
+            <Route path="/journal/:journalId" element={<ProtectedRoute><JournalPage /></ProtectedRoute>} />
+            <Route path="/homebrew" element={<ProtectedRoute><HomebrewPage /></ProtectedRoute>} />
+            <Route path="/calendar" element={<ProtectedRoute><CalendarPage /></ProtectedRoute>} />
+            <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
+            <Route path="/rules" element={<ProtectedRoute><RulesPage /></ProtectedRoute>} />
+            <Route path="/npcs" element={<ProtectedRoute><NPCLibraryPage /></ProtectedRoute>} />
+            <Route path="/campaign/:id/dashboard" element={<ProtectedRoute><CampaignDashboardPage /></ProtectedRoute>} />
+            <Route path="/campaign/:id/session/:sessionId/play" element={<ProtectedRoute><SessionPlayPage /></ProtectedRoute>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <ChatWidget />
